@@ -10,7 +10,7 @@ export const metadata: Metadata = {
   title: "Connect",
 };
 
-const poppins = Poppins({
+Poppins({
   weight: ["200", "300", "400", "500", "700"],
   subsets: ["latin"],
 });
