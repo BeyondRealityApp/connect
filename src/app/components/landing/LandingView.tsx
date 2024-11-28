@@ -1,11 +1,25 @@
-import { Box, Fade } from "@mui/material";
-import LandingStepZeroView from "./LandingStepZeroView";
-import LandingStepOneView from "./LandingStepOneView";
+import { Box, Fade, Typography } from "@mui/material";
+import { TransitionGroup } from "react-transition-group";
 
 type LandingViewProps = {
   onboardingStep: number;
   onClickHandler: () => void;
 };
+
+const onboardingContent = [
+  {
+    title: "Connect",
+    subtitle: "Click to start",
+  },
+  {
+    title: "Go offline",
+    subtitle: "to connect",
+  },
+  {
+    title: "No, seriously.",
+    subtitle: "Turn off your internet, to continue",
+  },
+];
 
 const LandingView: React.FC<LandingViewProps> = ({
   onboardingStep,
@@ -23,16 +37,39 @@ const LandingView: React.FC<LandingViewProps> = ({
       }}
       onClick={onClickHandler}
     >
-      <Fade in={onboardingStep === 0}>
-        <div>
-          <LandingStepZeroView />
-        </div>
-      </Fade>
-      <Fade in={onboardingStep === 1}>
-        <div>
-          <LandingStepOneView />
-        </div>
-      </Fade>
+      <TransitionGroup>
+        <Fade key={onboardingStep} timeout={500}>
+          <Box
+            sx={{
+              position: "absolute",
+              top: "50%",
+              left: "50%",
+              transform: "translate(-50%, -50%)",
+              width: "90%",
+            }}
+            textAlign="center"
+          >
+            <Typography
+              variant="h1"
+              sx={{
+                fontWeight: 200,
+                userSelect: "none",
+              }}
+            >
+              {onboardingContent[onboardingStep].title}
+            </Typography>
+            <Typography
+              variant="h3"
+              sx={{
+                fontWeight: 200,
+                userSelect: "none",
+              }}
+            >
+              {onboardingContent[onboardingStep].subtitle}
+            </Typography>
+          </Box>
+        </Fade>
+      </TransitionGroup>
     </Box>
   );
 };
