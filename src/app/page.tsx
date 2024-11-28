@@ -7,8 +7,8 @@ import theme from "@/theme";
 import { useEffect, useState } from "react";
 
 export default function Home() {
-  const [offline, setOffline] = useState<boolean>(true);
-  
+  const [offline, setOffline] = useState<boolean>(false);
+
   useEffect(() => {
     function onlineHandler() {
       setOffline(false);
