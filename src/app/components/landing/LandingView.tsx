@@ -8,7 +8,7 @@ type LandingViewProps = {
 
 const onboardingContent = [
   {
-    title: "Connect",
+    title: "Connect.",
     subtitle: "Click to start",
   },
   {

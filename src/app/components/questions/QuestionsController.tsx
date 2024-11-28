@@ -2,13 +2,15 @@ import QuestionsView from "./QuestionsView";
 import { questions as initialQuestions } from "@/app/db/questions";
 import { useState } from "react";
 
+export type SettingOption = "date" | "friends" | "family" | null;
+
 const QuestionsController = () => {
   const [questions, setQuestions] = useState(initialQuestions);
+  const [settingOption, setSettingOption] = useState<SettingOption>(null);
   const [currentQuestionIndex, setCurrentQuestionIndex] = useState(0);
-  const [started, setStarted] = useState<boolean>(false);
 
-  const onStartClick = () => {
-    setStarted(true);
+  const onStartClick = (settingOption: SettingOption) => {
+    setSettingOption(settingOption);
   };
 
   const handleNextQuestionClick = () => {
@@ -26,8 +28,8 @@ const QuestionsController = () => {
 
   return (
     <QuestionsView
-      started={started}
       onStartClick={onStartClick}
+      settingOption={settingOption}
       questions={questions}
       currentQuestionIndex={currentQuestionIndex}
       handleNextQuestionClick={handleNextQuestionClick}
