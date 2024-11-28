@@ -4,10 +4,28 @@ import { Box } from "@mui/material";
 import LandingController from "./components/landing/LandingController";
 import QuestionsController from "./components/questions/QuestionsController";
 import theme from "@/theme";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 export default function Home() {
-  const [offline, setOnline] = useState<boolean>(true);
+  const [offline, setOffline] = useState<boolean>(true);
+  
+  useEffect(() => {
+    function onlineHandler() {
+      setOffline(false);
+    }
+
+    function offlineHandler() {
+      setOffline(true);
+    }
+
+    window.addEventListener("online", onlineHandler);
+    window.addEventListener("offline", offlineHandler);
+
+    return () => {
+      window.removeEventListener("online", onlineHandler);
+      window.removeEventListener("offline", offlineHandler);
+    };
+  }, []);
   return (
     <Box
       sx={{
