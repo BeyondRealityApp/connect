@@ -13,6 +13,7 @@ export const metadata: Metadata = {
 const poppins = Poppins({
   weight: ["200", "300", "400", "500", "700"],
   subsets: ["latin"],
+  variable: "--font-poppins",
 });
 
 export default function RootLayout({
@@ -22,7 +23,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={poppins.style.fontFamily}>
+      <body className={poppins.variable}>
         <AppRouterCacheProvider>
           <ThemeProvider theme={theme}>
             <Box
