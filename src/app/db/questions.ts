@@ -7,8 +7,7 @@ export interface Question {
   seen: boolean;
 }
 
-export const questions: Question[] = [
-  // Reflective Questions (1-10)
+export const dateQuestions: Question[] = [
   {
     id: "q1",
     text: {

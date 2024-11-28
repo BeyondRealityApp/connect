@@ -2,7 +2,6 @@
 import { initializeApp } from "firebase/app";
 import { getAnalytics, isSupported } from "firebase/analytics";
 
-
 const firebaseConfig = {
   apiKey: "AIzaSyCqz64xBKi87MWhJfW-pSkWTGb_jfRvLC0",
   authDomain: "beyond-reality-connect.firebaseapp.com",
@@ -15,5 +14,4 @@ const firebaseConfig = {
 
 // Initialize Firebase
 const app = initializeApp(firebaseConfig);
-const analytics = getAnalytics(app);
-analytics.app.automaticDataCollectionEnabled = true;
+isSupported().then((yes) => (yes ? getAnalytics(app) : null));

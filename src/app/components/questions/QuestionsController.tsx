@@ -1,5 +1,5 @@
 import QuestionsView from "./QuestionsView";
-import { questions as initialQuestions } from "@/app/db/questions";
+import { dateQuestions as initialQuestions } from "@/app/db/questions";
 import { useState } from "react";
 
 export type SettingOption = "date" | "friends" | "family" | null;
