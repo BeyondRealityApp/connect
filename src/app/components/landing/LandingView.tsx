@@ -34,6 +34,7 @@ const LandingView: React.FC<LandingViewProps> = ({
         alignItems: "center",
         height: "100%",
         width: "100%",
+        overflow: "hidden",
       }}
       onClick={onClickHandler}
     >
@@ -50,7 +51,7 @@ const LandingView: React.FC<LandingViewProps> = ({
             textAlign="center"
           >
             <Typography
-              variant="h1"
+              variant="h2"
               sx={{
                 fontWeight: 200,
                 userSelect: "none",
@@ -59,7 +60,7 @@ const LandingView: React.FC<LandingViewProps> = ({
               {onboardingContent[onboardingStep].title}
             </Typography>
             <Typography
-              variant="h3"
+              variant="h4"
               sx={{
                 fontWeight: 200,
                 userSelect: "none",
