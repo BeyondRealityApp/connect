@@ -1,7 +1,5 @@
 import { createSlice } from "@reduxjs/toolkit";
 import type { PayloadAction } from "@reduxjs/toolkit";
-import { init } from "next/dist/compiled/webpack/webpack";
-import { initialize } from "next/dist/server/lib/render-server";
 
 export interface OnlineState {
   online: boolean;

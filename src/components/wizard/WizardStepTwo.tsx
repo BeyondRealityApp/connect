@@ -31,7 +31,7 @@ const WizardStepTwo: React.FC<WizardStepTwoProps> = ({ onStartClick }) => {
         fontWeight={200}
         marginBottom={4}
       >
-        Make yourself comfortable, and let's get started.
+        Make yourself comfortable, and let&apos;s get started.
       </Typography>
       <Button
         variant="contained"

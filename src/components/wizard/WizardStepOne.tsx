@@ -1,9 +1,4 @@
 import { Box, Button, Typography } from "@mui/material";
-import AcUnitIcon from "@mui/icons-material/AcUnit";
-import Diversity1Icon from "@mui/icons-material/Diversity1";
-import Diversity3Icon from "@mui/icons-material/Diversity3";
-import FavoriteIcon from "@mui/icons-material/Favorite";
-import WorkIcon from "@mui/icons-material/Work";
 import { GameSetting } from "@/lib/types";
 
 type SettingOption = Exclude<GameSetting, null>;
