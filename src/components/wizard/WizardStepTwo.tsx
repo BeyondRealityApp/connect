@@ -23,7 +23,7 @@ const WizardStepTwo: React.FC<WizardStepTwoProps> = ({ onStartClick }) => {
         fontWeight={200}
         marginBottom={2}
       >
-        Ready?
+        Ready
       </Typography>
       <Typography
         variant="h6"
@@ -31,7 +31,7 @@ const WizardStepTwo: React.FC<WizardStepTwoProps> = ({ onStartClick }) => {
         fontWeight={200}
         marginBottom={4}
       >
-        Make yourself comfortable, and let&apos;s get started.
+        to connect?
       </Typography>
       <Button
         variant="contained"

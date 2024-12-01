@@ -25,7 +25,7 @@ const WizardStepZero: React.FC<WizardStepZeroProps> = ({ onContinueClick }) => {
         meaningfull questions.
         <br></br>
         <br></br>
-        Select the company you&apos;re with, and start asking questions.
+        Select the setting you are in and connect!
       </Typography>
       <Button
         variant="contained"

@@ -39,10 +39,10 @@ const FinalView: React.FC<FinalViewProps> = ({
           fontWeight={200}
           marginBottom={2}
         >
-          That was it. We hope you enjoyed getting to know each other better!
+          That was it. We hope you enjoyed connect!
           <br />
           <br />
-          If you did, please consider sharing this game with someone else.
+          Help others to Connect by sharing the link.
         </Typography>
         <Button
           color="primary"
