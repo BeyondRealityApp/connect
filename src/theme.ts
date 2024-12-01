@@ -1,6 +1,13 @@
 "use client";
 
 import { createTheme } from '@mui/material/styles';
+import { Poppins } from "next/font/google";
+
+export const poppins = Poppins({
+  weight: ["200", "300", "400", "500", "700"],
+  subsets: ["latin"],
+  variable: "--font-poppins",
+});
 
 const theme = createTheme({
     palette: {
@@ -27,7 +34,7 @@ const theme = createTheme({
       },
     },
     typography: {
-      fontFamily: "var(--font-poppins)",
+      fontFamily: poppins.style.fontFamily,
       fontSize: 12,
     },
   });
