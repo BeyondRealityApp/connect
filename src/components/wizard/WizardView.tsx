@@ -1,5 +1,5 @@
 import { Box, Button, MobileStepper } from "@mui/material";
-import { GameSetting } from "@/lib/features/gameSettingSlice";
+import { GameSetting } from "@/lib/types";
 import WizardStepZero from "./WizardStepZero";
 import WizardStepOne from "./WizardStepOne";
 import WizardStepTwo from "./WizardStepTwo";
