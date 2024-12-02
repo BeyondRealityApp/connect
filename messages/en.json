@@ -34,7 +34,8 @@
   "QuestionsController": {
     "questionProgress": "Question {current} of {total}",
     "nextButtonText": "Next",
-    "backButtonText": "Previous"
+    "backButtonText": "Previous",
+    "restartButtonText": "Restart"
   },
   "FinalController": {
     "description_1": "That was it. We hope you enjoyed connect!",

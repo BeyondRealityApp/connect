@@ -34,7 +34,8 @@
   "QuestionsController": {
     "questionProgress": "Vraag {current} van {total}",
     "nextButtonText": "Volgende",
-    "backButtonText": "Vorige"
+    "backButtonText": "Vorige",
+    "restartButtonText": "Opnieuw starten"
   },
   "FinalController": {
     "description_1": "Dat was het. We hopen dat je genoten hebt van Connect!",

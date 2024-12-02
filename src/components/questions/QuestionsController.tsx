@@ -13,6 +13,7 @@ import { useTranslations } from "next-intl";
 
 const QuestionsController = () => {
   const [questions, setQuestions] = useState<Question[]>([]);
+  const [openMenu, setOpenMenu] = useState(false);
   const [currentQuestionIndex, setCurrentQuestionIndex] = useState(0);
   const { setting } = useAppSelector((state) => state.gameSetting);
   const dispatch = useAppDispatch();
@@ -26,6 +27,11 @@ const QuestionsController = () => {
     }),
     nextButtonText: t("nextButtonText"),
     backButtonText: t("backButtonText"),
+    restartButtonText: t("restartButtonText"),
+  };
+
+  const onMenuClick = () => {
+    setOpenMenu((prev) => !prev);
   };
 
   const shuffleQuestions = (questions: Question[]) => {
@@ -65,12 +71,20 @@ const QuestionsController = () => {
     }
   };
 
+  const onRestartClick = () => {
+    dispatch(setGameStatus("notStarted"));
+    setCurrentQuestionIndex(0);
+  };
+
   return (
     <QuestionsView
       questions={questions}
       currentQuestionIndex={currentQuestionIndex}
       handleNextClick={handleNextClick}
       handleBackClick={handleBackClick}
+      onRestartClick={onRestartClick}
+      openMenu={openMenu}
+      onMenuClick={onMenuClick}
       content={content}
       locale={locale}
     />
