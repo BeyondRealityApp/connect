@@ -7,6 +7,12 @@ type QuestionsViewProps = {
   currentQuestionIndex: number;
   handleNextClick: () => void;
   handleBackClick: () => void;
+  locale: string;
+  content: {
+    questionProgress: string;
+    nextButtonText: string;
+    backButtonText: string;
+  };
 };
 
 const QuestionsView: React.FC<QuestionsViewProps> = ({
@@ -14,6 +20,8 @@ const QuestionsView: React.FC<QuestionsViewProps> = ({
   currentQuestionIndex,
   handleNextClick,
   handleBackClick,
+  locale,
+  content,
 }) => {
   return (
     <Box
@@ -33,14 +41,14 @@ const QuestionsView: React.FC<QuestionsViewProps> = ({
           top: 20,
         }}
       >
-        Question {currentQuestionIndex + 1} of {questions.length}
+        {content.questionProgress}
       </Typography>
       {questions.length > 0 && (
         <TransitionGroup>
           {questions.map((question, index) => {
             return (
               index === currentQuestionIndex && (
-                <Fade in={true} timeout={500}>
+                <Fade in={true} timeout={500} key={question.id}>
                   <Box
                     sx={{
                       display: "flex",
@@ -60,7 +68,7 @@ const QuestionsView: React.FC<QuestionsViewProps> = ({
                       fontWeight={200}
                       marginBottom={2}
                     >
-                      {question.text["en"]}
+                      {question.text[locale]}
                     </Typography>
                   </Box>
                 </Fade>
@@ -84,7 +92,7 @@ const QuestionsView: React.FC<QuestionsViewProps> = ({
               maxWidth: 400,
             }}
           >
-            Next
+            {content.nextButtonText}
           </Button>
           <Button
             color="primary"
@@ -95,7 +103,7 @@ const QuestionsView: React.FC<QuestionsViewProps> = ({
               bottom: 20,
             }}
           >
-            Back
+            {content.backButtonText}
           </Button>
         </>
       )}

@@ -7,13 +7,26 @@ import { Question } from "@/lib/types";
 import QuestionsView from "./QuestionsView";
 import { useAppSelector, useAppDispatch } from "@/lib/hooks";
 import { useEffect } from "react";
+import { useLocale } from "next-intl";
 import { useState } from "react";
+import { useTranslations } from "next-intl";
 
 const QuestionsController = () => {
   const [questions, setQuestions] = useState<Question[]>([]);
   const [currentQuestionIndex, setCurrentQuestionIndex] = useState(0);
   const { setting } = useAppSelector((state) => state.gameSetting);
   const dispatch = useAppDispatch();
+  const t = useTranslations("QuestionsController");
+  const locale = useLocale();
+
+  const content = {
+    questionProgress: t("questionProgress", {
+      current: currentQuestionIndex + 1,
+      total: questions.length,
+    }),
+    nextButtonText: t("nextButtonText"),
+    backButtonText: t("backButtonText"),
+  };
 
   const shuffleQuestions = (questions: Question[]) => {
     return questions
@@ -58,6 +71,8 @@ const QuestionsController = () => {
       currentQuestionIndex={currentQuestionIndex}
       handleNextClick={handleNextClick}
       handleBackClick={handleBackClick}
+      content={content}
+      locale={locale}
     />
   );
 };

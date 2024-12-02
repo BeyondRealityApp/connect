@@ -4,26 +4,16 @@ import { TransitionGroup } from "react-transition-group";
 type LandingViewProps = {
   onboardingStep: number;
   onClickHandler: () => void;
+  content: {
+    title: string;
+    subtitle: string;
+  }[];
 };
-
-const onboardingContent = [
-  {
-    title: "Connect.",
-    subtitle: "Click to start",
-  },
-  {
-    title: "Go offline",
-    subtitle: "to connect",
-  },
-  {
-    title: "No, seriously.",
-    subtitle: "Turn off your internet, to continue",
-  },
-];
 
 const LandingView: React.FC<LandingViewProps> = ({
   onboardingStep,
   onClickHandler,
+  content,
 }) => {
   return (
     <Box
@@ -57,7 +47,7 @@ const LandingView: React.FC<LandingViewProps> = ({
                 userSelect: "none",
               }}
             >
-              {onboardingContent[onboardingStep].title}
+              {content[onboardingStep].title}
             </Typography>
             <Typography
               variant="h4"
@@ -66,7 +56,7 @@ const LandingView: React.FC<LandingViewProps> = ({
                 userSelect: "none",
               }}
             >
-              {onboardingContent[onboardingStep].subtitle}
+              {content[onboardingStep].subtitle}
             </Typography>
           </Box>
         </Fade>

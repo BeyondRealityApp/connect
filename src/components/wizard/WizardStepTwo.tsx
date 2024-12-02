@@ -3,9 +3,17 @@ import React from "react";
 
 type WizardStepTwoProps = {
   onStartClick: () => void;
+  content: {
+    title: string;
+    description: string;
+    buttonText: string;
+  };
 };
 
-const WizardStepTwo: React.FC<WizardStepTwoProps> = ({ onStartClick }) => {
+const WizardStepTwo: React.FC<WizardStepTwoProps> = ({
+  onStartClick,
+  content,
+}) => {
   return (
     <Box
       sx={{
@@ -23,7 +31,7 @@ const WizardStepTwo: React.FC<WizardStepTwoProps> = ({ onStartClick }) => {
         fontWeight={200}
         marginBottom={2}
       >
-        Ready
+        {content.title}
       </Typography>
       <Typography
         variant="h6"
@@ -31,7 +39,7 @@ const WizardStepTwo: React.FC<WizardStepTwoProps> = ({ onStartClick }) => {
         fontWeight={200}
         marginBottom={4}
       >
-        to connect?
+        {content.description}
       </Typography>
       <Button
         variant="contained"
@@ -46,7 +54,7 @@ const WizardStepTwo: React.FC<WizardStepTwoProps> = ({ onStartClick }) => {
         }}
         onClick={onStartClick}
       >
-        Start
+        {content.buttonText}
       </Button>
     </Box>
   );

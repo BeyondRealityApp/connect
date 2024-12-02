@@ -5,11 +5,18 @@ import ShareIcon from '@mui/icons-material/Share';
 type FinalViewProps = {
   onRestartClick: () => void;
   onShareClick: () => void;
+  content: {
+    description_1: string;
+    description_2: string;
+    shareButtonText: string;
+    restartButtonText: string;
+  }
 };
 
 const FinalView: React.FC<FinalViewProps> = ({
   onRestartClick,
   onShareClick,
+  content,
 }) => {
   return (
     <Box
@@ -39,10 +46,10 @@ const FinalView: React.FC<FinalViewProps> = ({
           fontWeight={200}
           marginBottom={2}
         >
-          That was it. We hope you enjoyed connect!
+          {content.description_1}
           <br />
           <br />
-          Help others to Connect by sharing the link.
+          {content.description_2}
         </Typography>
         <Button
           color="primary"
@@ -54,7 +61,7 @@ const FinalView: React.FC<FinalViewProps> = ({
             marginTop: 2,
           }}
         >
-          Share
+          {content.shareButtonText}
         </Button>
       </Box>
       <Button
@@ -68,7 +75,7 @@ const FinalView: React.FC<FinalViewProps> = ({
           bottom: 20,
         }}
       >
-        Restart
+        {content.restartButtonText}
       </Button>
     </Box>
   );

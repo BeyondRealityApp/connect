@@ -3,36 +3,47 @@ import { GameSetting } from "@/lib/types";
 
 type SettingOption = Exclude<GameSetting, null>;
 
-const settingOptions = [
-  {
-    id: "date",
-    title: "Date night",
-    enabled: true,
-  },
-  {
-    id: "friends",
-    title: "Friends",
-    enabled: true,
-  },
-  {
-    id: "holiday",
-    title: "Holiday",
-    enabled: true,
-  },
-  {
-    id: "work",
-    title: "Work",
-    enabled: true,
-  },
-];
-
 type WizardStepOneProps = {
   onSettingOptionClick: (settingOption: SettingOption) => void;
+  content: {
+    title: string;
+    description: string;
+    settingOption: {
+      date: string;
+      friends: string;
+      holiday: string;
+      work: string;
+    };
+  };
 };
 
 const WizardStepOne: React.FC<WizardStepOneProps> = ({
   onSettingOptionClick,
+  content,
 }) => {
+  const settingOptions = [
+    {
+      id: "date",
+      title: content.settingOption.date,
+      enabled: true,
+    },
+    {
+      id: "friends",
+      title: content.settingOption.friends,
+      enabled: true,
+    },
+    {
+      id: "holiday",
+      title: content.settingOption.holiday,
+      enabled: true,
+    },
+    {
+      id: "work",
+      title: content.settingOption.work,
+      enabled: true,
+    },
+  ];
+
   return (
     <Box
       sx={{
@@ -50,7 +61,7 @@ const WizardStepOne: React.FC<WizardStepOneProps> = ({
         fontWeight={200}
         marginBottom={2}
       >
-        What setting are you in?
+        {content.title}
       </Typography>
       <Typography
         variant="h6"
@@ -58,7 +69,7 @@ const WizardStepOne: React.FC<WizardStepOneProps> = ({
         fontWeight={200}
         marginBottom={4}
       >
-        There are questions for every setting. Select one to start.
+        {content.description}
       </Typography>
       {settingOptions.map((option, index) => (
         <Button
@@ -77,7 +88,6 @@ const WizardStepOne: React.FC<WizardStepOneProps> = ({
           onClick={() => onSettingOptionClick(option.id as SettingOption)}
         >
           {option.title}
-          {option.enabled ? "" : " (coming soon)"}
         </Button>
       ))}
     </Box>

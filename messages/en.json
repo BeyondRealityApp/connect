@@ -1,0 +1,49 @@
+{
+  "LandingController": {
+    "title_1": "Connect.",
+    "subtitle_1": "Click to start",
+    "title_2": "Go offline",
+    "subtitle_2": "to connect",
+    "title_3": "No, seriously.",
+    "subtitle_3": "Turn off your internet, to continue"
+  },
+  "WizardController": {
+    "backButtonText": "Back",
+    "StepZero": {
+      "title": "Welcome",
+      "description_1": "Connect enables you to connect with your loved ones through asking meaningfull questions.",
+      "description_2": "Select the setting you are in and connect!",
+      "buttonText": "Continue"
+    },
+    "StepOne": {
+      "title": "What setting are you in?",
+      "description": "There are questions for every setting. Select one to start.",
+      "settingOption": {
+        "date": "Date",
+        "holiday": "Holiday",
+        "friends": "Friends",
+        "work": "Work"
+      }
+    },
+    "StepTwo": {
+      "title": "Ready",
+      "description": "to connect?",
+      "buttonText": "Start"
+    }
+  },
+  "QuestionsController": {
+    "questionProgress": "Question {current} of {total}",
+    "nextButtonText": "Next",
+    "backButtonText": "Previous"
+  },
+  "FinalController": {
+    "description_1": "That was it. We hope you enjoyed connect!",
+    "description_2": "Help others to Connect by sharing the link.",
+    "shareButtonText": "Share",
+    "restartButtonText": "Restart",
+    "shareButton": {
+      "title": "Connect",
+      "text": "I would like to know you better. Let's connect."
+    }
+  }
+}

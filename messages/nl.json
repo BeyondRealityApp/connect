@@ -1,0 +1,49 @@
+{
+  "LandingController": {
+    "title_1": "Connect.",
+    "subtitle_1": "Klik om te starten",
+    "title_2": "Ga offline",
+    "subtitle_2": "om te verbinden",
+    "title_3": "Nee, maar echt.",
+    "subtitle_3": "Schakel je internet uit om door te gaan"
+  },
+  "WizardController": {
+    "backButtonText": "Terug",
+    "StepZero": {
+      "title": "Welkom",
+      "description_1": "Connect stelt je in staat om te verbinden met je dierbaren door betekenisvolle vragen te stellen.",
+      "description_2": "Selecteer de setting waarin je je bevindt en verbind!",
+      "buttonText": "Doorgaan"
+    },
+    "StepOne": {
+      "title": "In welke setting bevind je je?",
+      "description": "Er zijn vragen voor elke setting. Selecteer er één om te beginnen.",
+      "settingOption": {
+        "date": "Date",
+        "holiday": "Feestdagen",
+        "friends": "Vrienden",
+        "work": "Werk"
+      }
+    },
+    "StepTwo": {
+      "title": "Klaar",
+      "description": "om te verbinden?",
+      "buttonText": "Start"
+    }
+  },
+  "QuestionsController": {
+    "questionProgress": "Vraag {current} van {total}",
+    "nextButtonText": "Volgende",
+    "backButtonText": "Vorige"
+  },
+  "FinalController": {
+    "description_1": "Dat was het. We hopen dat je genoten hebt van Connect!",
+    "description_2": "Help anderen om te verbinden door de link te delen.",
+    "shareButtonText": "Delen",
+    "restartButtonText": "Opnieuw starten",
+    "shareButton": {
+      "title": "Connect",
+      "text": "Ik wil je beter leren kennen. Let's connect."
+    }
+  }
+}

@@ -10,6 +10,30 @@ type WizardView = {
   onContinueClick: () => void;
   onSettingOptionClick: (settingOption: GameSetting) => void;
   onStartClick: () => void;
+  content: {
+    backButtonText: string;
+    StepZero: {
+      title: string;
+      description_1: string;
+      description_2: string;
+      buttonText: string;
+    };
+    StepOne: {
+      title: string;
+      description: string;
+      settingOption: {
+        date: string;
+        friends: string;
+        holiday: string;
+        work: string;
+      };
+    };
+    StepTwo: {
+      title: string;
+      description: string;
+      buttonText: string;
+    };
+  };
 };
 
 const WizardView: React.FC<WizardView> = ({
@@ -18,6 +42,7 @@ const WizardView: React.FC<WizardView> = ({
   onContinueClick,
   onSettingOptionClick,
   onStartClick,
+  content,
 }) => {
   const backButton = (
     <Button
@@ -25,7 +50,7 @@ const WizardView: React.FC<WizardView> = ({
       disabled={activeStep <= 0}
       sx={{ marginRight: 1 }}
     >
-      Back
+      {content.backButtonText as unknown as string}
     </Button>
   );
 
@@ -45,12 +70,23 @@ const WizardView: React.FC<WizardView> = ({
         }}
       >
         {activeStep === 0 && (
-          <WizardStepZero onContinueClick={onContinueClick} />
+          <WizardStepZero
+            content={content.StepZero}
+            onContinueClick={onContinueClick}
+          />
         )}
         {activeStep === 1 && (
-          <WizardStepOne onSettingOptionClick={onSettingOptionClick} />
+          <WizardStepOne
+            onSettingOptionClick={onSettingOptionClick}
+            content={content.StepOne}
+          />
         )}
-        {activeStep === 2 && <WizardStepTwo onStartClick={onStartClick} />}
+        {activeStep === 2 && (
+          <WizardStepTwo
+            onStartClick={onStartClick}
+            content={content.StepTwo}
+          />
+        )}
       </Box>
       <MobileStepper
         variant="dots"

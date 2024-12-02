@@ -2,9 +2,18 @@ import { Button, Typography } from "@mui/material";
 
 type WizardStepZeroProps = {
   onContinueClick: () => void;
+  content: {
+    title: string;
+    description_1: string;
+    description_2: string;
+    buttonText: string;
+  };
 };
 
-const WizardStepZero: React.FC<WizardStepZeroProps> = ({ onContinueClick }) => {
+const WizardStepZero: React.FC<WizardStepZeroProps> = ({
+  onContinueClick,
+  content,
+}) => {
   return (
     <>
       <Typography
@@ -13,7 +22,7 @@ const WizardStepZero: React.FC<WizardStepZeroProps> = ({ onContinueClick }) => {
         fontWeight={200}
         marginBottom={2}
       >
-        Welcome
+        {content.title}
       </Typography>
       <Typography
         variant="h6"
@@ -21,11 +30,10 @@ const WizardStepZero: React.FC<WizardStepZeroProps> = ({ onContinueClick }) => {
         fontWeight={200}
         marginBottom={4}
       >
-        Connect enables you to connect with your loved ones through asking
-        meaningfull questions.
-        <br></br>
-        <br></br>
-        Select the setting you are in and connect!
+        {content.description_1}
+        <br />
+        <br />
+        {content.description_2}
       </Typography>
       <Button
         variant="contained"
@@ -40,7 +48,7 @@ const WizardStepZero: React.FC<WizardStepZeroProps> = ({ onContinueClick }) => {
         }}
         onClick={onContinueClick}
       >
-        Continue
+        {content.buttonText}
       </Button>
     </>
   );

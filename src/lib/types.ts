@@ -9,4 +9,3 @@ export interface Question {
 
 export type GameSetting = "date" | "friends" | "holiday" | "work" | null;
 export type GameStatus = "notStarted" | "inProgress" | "completed";
-
