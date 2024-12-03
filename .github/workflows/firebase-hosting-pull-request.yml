@@ -19,5 +19,3 @@ jobs:
           repoToken: ${{ secrets.GITHUB_TOKEN }}
           firebaseServiceAccount: ${{ secrets.FIREBASE_SERVICE_ACCOUNT_BEYOND_REALITY_CONNECT }}
           projectId: beyond-reality-connect
-        env:
-          FIREBASE_CLI_EXPERIMENTS: webframeworks
