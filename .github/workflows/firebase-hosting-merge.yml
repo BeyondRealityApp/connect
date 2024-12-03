@@ -17,5 +17,4 @@ jobs:
         with:
           repoToken: ${{ secrets.GITHUB_TOKEN }}
           firebaseServiceAccount: ${{ secrets.FIREBASE_SERVICE_ACCOUNT_BEYOND_REALITY_CONNECT }}
-          channelId: live
           projectId: beyond-reality-connect
