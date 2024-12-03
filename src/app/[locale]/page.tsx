@@ -12,10 +12,11 @@ export default function Home() {
 
   return (
     <>
-      {online && <LandingController />}
+      <WizardController />
+      {/* {online && <LandingController />}
       {!online && status === "notStarted" && <WizardController />}
       {!online && status === "inProgress" && <QuestionsController />}
-      {!online && status === "completed" && <FinalController />}
+      {!online && status === "completed" && <FinalController />} */}
     </>
   );
 }

@@ -1,5 +1,6 @@
 import { Box, Button, Typography } from "@mui/material";
 import { GameSetting } from "@/lib/types";
+import { ButtonOwnProps } from "@mui/material";
 
 type SettingOption = Exclude<GameSetting, null>;
 
@@ -17,34 +18,36 @@ type WizardStepOneProps = {
   };
 };
 
+type Setting = {
+  id: SettingOption;
+  title: string;
+  color: ButtonOwnProps["color"];
+};
+
 const WizardStepOne: React.FC<WizardStepOneProps> = ({
   onSettingOptionClick,
   content,
 }) => {
-  const settingOptions = [
+  const settings: Setting[] = [
     {
       id: "friends",
       title: content.settingOption.friends,
-      enabled: true,
       color: "primary",
     },
     {
       id: "date",
       title: content.settingOption.date,
-      enabled: true,
-      color: "#4d199a",
+      color: "purple",
     },
     {
       id: "yearEnd",
       title: content.settingOption.yearEnd,
-      enabled: true,
-      color: "#A72058",
+      color: "red",
     },
     {
       id: "work",
       title: content.settingOption.work,
-      enabled: true,
-      color: "#2058A7",
+      color: "blue",
     },
   ];
 
@@ -75,7 +78,7 @@ const WizardStepOne: React.FC<WizardStepOneProps> = ({
       >
         {content.description}
       </Typography>
-      {settingOptions.map((option, index) => (
+      {settings.map((option, index) => (
         <Button
           key={index}
           sx={{
@@ -84,12 +87,10 @@ const WizardStepOne: React.FC<WizardStepOneProps> = ({
             width: "100%",
             maxWidth: 400,
             height: 60,
-            backgroundColor: option.color,
-            opacity: 0.9,
           }}
+          color={option.color}
           variant="contained"
           size="large"
-          disabled={!option.enabled}
           onClick={() => onSettingOptionClick(option.id as SettingOption)}
         >
           {option.title}
