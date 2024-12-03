@@ -20,7 +20,7 @@
       "description": "Er zijn vragen voor elke setting. Selecteer er één om te beginnen.",
       "settingOption": {
         "date": "Date",
-        "holiday": "Feestdagen",
+        "yearEnd": "Jaareinde",
         "friends": "Vrienden",
         "work": "Werk"
       }

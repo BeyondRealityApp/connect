@@ -24,7 +24,7 @@ const WizardController = () => {
       settingOption: {
         date: t("StepOne.settingOption.date"),
         friends: t("StepOne.settingOption.friends"),
-        holiday: t("StepOne.settingOption.holiday"),
+        yearEnd: t("StepOne.settingOption.yearEnd"),
         work: t("StepOne.settingOption.work"),
       },
     },

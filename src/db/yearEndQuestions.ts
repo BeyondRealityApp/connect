@@ -1,6 +1,6 @@
 import { Question } from "@/lib/types";
 
-export const holidayQuestions: Question[] = [
+export const yearEndQuestions: Question[] = [
   {
     id: "q1",
     text: {

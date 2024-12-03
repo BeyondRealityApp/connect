@@ -1,7 +1,7 @@
 import { dateQuestions } from "@/db/dateQuestions";
 import { friendsQuestions } from "@/db/friendsQuestions";
 import { workQuestions } from "@/db/workQuestions";
-import { holidayQuestions } from "@/db/holidayQuestions";
+import { yearEndQuestions } from "@/db/yearEndQuestions";
 import { setGameStatus } from "@/lib/features/gameSettingSlice";
 import { Question } from "@/lib/types";
 import QuestionsView from "./QuestionsView";
@@ -51,8 +51,8 @@ const QuestionsController = () => {
     if (setting === "work") {
       setQuestions(shuffleQuestions(workQuestions));
     }
-    if (setting === "holiday") {
-      setQuestions(shuffleQuestions(holidayQuestions));
+    if (setting === "yearEnd") {
+      setQuestions(shuffleQuestions(yearEndQuestions));
     }
   }, [setting]);
 

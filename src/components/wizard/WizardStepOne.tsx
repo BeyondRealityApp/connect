@@ -11,7 +11,7 @@ type WizardStepOneProps = {
     settingOption: {
       date: string;
       friends: string;
-      holiday: string;
+      yearEnd: string;
       work: string;
     };
   };
@@ -33,8 +33,8 @@ const WizardStepOne: React.FC<WizardStepOneProps> = ({
       enabled: true,
     },
     {
-      id: "holiday",
-      title: content.settingOption.holiday,
+      id: "yearEnd",
+      title: content.settingOption.yearEnd,
       enabled: true,
     },
     {

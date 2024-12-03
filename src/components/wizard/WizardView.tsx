@@ -24,7 +24,7 @@ type WizardView = {
       settingOption: {
         date: string;
         friends: string;
-        holiday: string;
+        yearEnd: string;
         work: string;
       };
     };

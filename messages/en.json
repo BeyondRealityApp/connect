@@ -20,7 +20,7 @@
       "description": "There are questions for every setting. Select one to start.",
       "settingOption": {
         "date": "Date",
-        "holiday": "Holiday",
+        "yearEnd": "Year End",
         "friends": "Friends",
         "work": "Work"
       }
