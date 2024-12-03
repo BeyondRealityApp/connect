@@ -7,8 +7,12 @@ import theme from "@/theme";
 import StoreProvider from "../StoreProvider";
 import { routing } from "@/i18n/routing";
 import { notFound } from "next/navigation";
-import { getMessages } from "next-intl/server";
+import { getMessages, setRequestLocale } from "next-intl/server";
 import { NextIntlClientProvider } from "next-intl";
+
+export function generateStaticParams() {
+  return routing.locales.map((locale) => ({ locale }));
+}
 
 export const metadata: Metadata = {
   title: "Connect",
@@ -24,6 +28,8 @@ export default async function RootLayout({
   if (!routing.locales.includes(locale as "en" | "nl")) {
     notFound();
   }
+
+  setRequestLocale(locale);
 
   const messages = await getMessages();
 
