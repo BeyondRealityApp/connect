@@ -23,24 +23,28 @@ const WizardStepOne: React.FC<WizardStepOneProps> = ({
 }) => {
   const settingOptions = [
     {
-      id: "date",
-      title: content.settingOption.date,
-      enabled: true,
-    },
-    {
       id: "friends",
       title: content.settingOption.friends,
       enabled: true,
+      color: "primary",
+    },
+    {
+      id: "date",
+      title: content.settingOption.date,
+      enabled: true,
+      color: "#4d199a",
     },
     {
       id: "yearEnd",
       title: content.settingOption.yearEnd,
       enabled: true,
+      color: "#A72058",
     },
     {
       id: "work",
       title: content.settingOption.work,
       enabled: true,
+      color: "#2058A7",
     },
   ];
 
@@ -80,9 +84,10 @@ const WizardStepOne: React.FC<WizardStepOneProps> = ({
             width: "100%",
             maxWidth: 400,
             height: 60,
+            backgroundColor: option.color,
+            opacity: 0.9,
           }}
           variant="contained"
-          color="primary"
           size="large"
           disabled={!option.enabled}
           onClick={() => onSettingOptionClick(option.id as SettingOption)}
